@@ -1,21 +1,58 @@
-# Web App · PUCPR — Tecnologias para Desenvolvimento Web
+<div align="center">
 
-React + Vite · React Router Dom · Firebase Auth + Firestore
+<img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+<img src="https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+<img src="https://img.shields.io/badge/Firebase-10-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+<img src="https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+
+<br /><br />
+
+# 🔐 Web App — Autenticação com Firebase
+
+Aplicação React com autenticação completa via **Firebase Authentication** e persistência de dados no **Firestore**. Desenvolvida como atividade avaliativa da disciplina **Tecnologias para Desenvolvimento Web** — PUCPR.
+
+<br />
+
+🔗 **[Acessar aplicação](https://projeto-web-entrega.vercel.app)**
+
+</div>
 
 ---
 
-## Estrutura do projeto
+## 📋 Sobre o projeto
+
+A aplicação possui **3 páginas** com fluxo completo de autenticação:
+
+| Página | Rota | Descrição |
+|--------|------|-----------|
+| 📝 Cadastro | `/cadastro` | Cria conta no Firebase Auth e salva dados no Firestore |
+| 🔑 Login | `/login` | Autentica o usuário via e-mail e senha |
+| 🏠 Principal | `/principal` | Exibe os dados do usuário logado (rota protegida) |
+
+---
+
+## 🚀 Tecnologias
+
+- **React 18** + **Vite** — interface e build
+- **React Router Dom v6** — navegação entre páginas
+- **Firebase Authentication** — autenticação via e-mail/senha
+- **Cloud Firestore** — banco de dados para dados do usuário
+- **Vercel** — deploy e hospedagem
+
+---
+
+## 🗂️ Estrutura do projeto
 
 ```
 src/
 ├── firebase/
 │   └── firebase.js          ← configuração Firebase (Auth + Firestore)
 ├── routes/
-│   └── AppRoutes.jsx        ← arquivo de rotas separado (React Router Dom)
+│   └── AppRoutes.jsx        ← arquivo de rotas (React Router Dom)
 ├── pages/
-│   ├── Cadastro.jsx         ← Página 1: cadastro com Firebase Auth + Firestore
-│   ├── Login.jsx            ← Página 2: login com Firebase Auth
-│   └── Principal.jsx        ← Página 3: dados do usuário logado
+│   ├── Cadastro.jsx         ← Página 1: cadastro
+│   ├── Login.jsx            ← Página 2: login
+│   └── Principal.jsx        ← Página 3: dados do usuário
 ├── styles/
 │   └── global.css
 ├── App.jsx
@@ -24,76 +61,52 @@ src/
 
 ---
 
-## 1. Configurar o Firebase
+## ⚙️ Como rodar localmente
 
-### 1.1 Criar projeto
-1. Acesse [console.firebase.google.com](https://console.firebase.google.com)
-2. Crie um novo projeto
-3. Em **Authentication** → Get started → habilite o provedor **E-mail/senha**
-4. Em **Firestore Database** → Create database → comece em **modo de teste**
-
-### 1.2 Pegar as credenciais
-Project Settings → Your apps → Web app → SDK setup → **Config**
-
-### 1.3 Criar o arquivo `.env`
-Copie o arquivo `.env.example` e renomeie para `.env`, preenchendo com suas credenciais:
-
-```env
-VITE_FIREBASE_API_KEY=AIzaSy...
-VITE_FIREBASE_AUTH_DOMAIN=meu-projeto.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=meu-projeto
-VITE_FIREBASE_STORAGE_BUCKET=meu-projeto.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
-VITE_FIREBASE_APP_ID=1:123456789:web:abc123
+**1. Clone o repositório**
+```bash
+git clone https://github.com/petrykpm/Projeto-web-entrega.git
+cd Projeto-web-entrega
 ```
 
----
-
-## 2. Instalar e rodar
-
+**2. Instale as dependências**
 ```bash
 npm install
+```
+
+**3. Configure as variáveis de ambiente**
+
+Copie o arquivo de exemplo e preencha com suas credenciais do Firebase:
+```bash
+cp env.example .env
+```
+
+```env
+VITE_FIREBASE_API_KEY=...
+VITE_FIREBASE_AUTH_DOMAIN=...
+VITE_FIREBASE_PROJECT_ID=...
+VITE_FIREBASE_STORAGE_BUCKET=...
+VITE_FIREBASE_MESSAGING_SENDER_ID=...
+VITE_FIREBASE_APP_ID=...
+```
+
+**4. Rode o projeto**
+```bash
 npm run dev
 ```
-
-Acesse: http://localhost:5173
-
----
-
-## 3. Build
-
-```bash
-npm run build
-```
-
-Gera a pasta `dist/` pronta para deploy.
+Acesse: [http://localhost:5173](http://localhost:5173)
 
 ---
 
-## 4. Deploy no Vercel
+## ☁️ Deploy
 
-### Opção A — Interface web (mais fácil)
-1. Faça push do projeto para um repositório GitHub
-2. Acesse [vercel.com](https://vercel.com) e importe o repositório
-3. Em **Environment Variables**, adicione todas as variáveis do `.env`
-4. Clique em **Deploy**
+O projeto está hospedado na **Vercel** com redeploy automático a cada push na branch `main`.
 
-### Opção B — Vercel CLI
-```bash
-npm install -g vercel
-vercel
-# Siga as instruções. Para produção:
-vercel --prod
-```
-
-> ⚠️ **Importante**: Nunca suba o arquivo `.env` para o GitHub.  
-> O `.gitignore` já o exclui por padrão no Vite.
+🔗 [https://projeto-web-entrega.vercel.app](https://projeto-web-entrega.vercel.app)
 
 ---
 
-## Regras do Firestore (modo produção)
-
-Quando for para produção, substitua as regras de teste por:
+## 🔒 Regras do Firestore (produção)
 
 ```
 rules_version = '2';
@@ -105,3 +118,11 @@ service cloud.firestore {
   }
 }
 ```
+
+---
+
+<div align="center">
+
+Feito por **Petryk Machozeki** · PUCPR · 2026
+
+</div>
