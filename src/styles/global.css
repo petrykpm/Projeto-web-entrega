@@ -84,10 +84,10 @@ body {
   z-index: 1;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 28px;
-  padding: 48px 44px;
+  border-radius: 20px;
+  padding: 30px 28px;
   width: 100%;
-  max-width: 440px;
+  max-width: 360px;
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) both;
@@ -101,7 +101,7 @@ body {
 /* ── Badge ───────────────────────────────────────── */
 .badge {
   display: inline-block;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -109,35 +109,35 @@ body {
   background: rgba(99,102,241,0.12);
   border: 1px solid rgba(99,102,241,0.22);
   border-radius: 100px;
-  padding: 4px 13px;
-  margin-bottom: 18px;
+  padding: 3px 11px;
+  margin-bottom: 12px;
 }
 
 /* ── Typography ──────────────────────────────────── */
 .card-title {
   font-family: var(--font-serif);
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 400;
   color: #f8fafc;
   line-height: 1.2;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .card-sub {
-  font-size: 13.5px;
+  font-size: 12.5px;
   color: var(--muted);
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   font-weight: 300;
 }
 
 /* ── Fields ──────────────────────────────────────── */
-.field { margin-bottom: 14px; }
+.field { margin-bottom: 10px; }
 
 .field-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 14px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 label {
@@ -154,10 +154,10 @@ input {
   width: 100%;
   background: rgba(255,255,255,0.05);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 12px 15px;
+  border-radius: 10px;
+  padding: 9px 13px;
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text);
   outline: none;
   transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
@@ -174,13 +174,13 @@ input:focus {
 /* ── Button ──────────────────────────────────────── */
 .btn {
   width: 100%;
-  margin-top: 6px;
-  padding: 14px;
+  margin-top: 4px;
+  padding: 11px;
   background: var(--grad);
   border: none;
-  border-radius: 13px;
+  border-radius: 11px;
   font-family: var(--font-body);
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 600;
   color: #fff;
   cursor: pointer;
@@ -227,7 +227,7 @@ input:focus {
 .divider {
   height: 1px;
   background: var(--border);
-  margin: 26px 0;
+  margin: 18px 0;
 }
 
 .footer-txt {
@@ -252,31 +252,31 @@ input:focus {
 
 /* ── Principal page ──────────────────────────────── */
 .profile-avatar {
-  width: 72px;
-  height: 72px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background: var(--grad);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-serif);
-  font-size: 28px;
+  font-size: 22px;
   color: #fff;
-  margin: 0 auto 24px;
+  margin: 0 auto 16px;
   box-shadow: 0 8px 32px rgba(99,102,241,0.35);
 }
 
 .info-grid {
   display: grid;
-  gap: 12px;
-  margin-bottom: 28px;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
 .info-item {
   background: rgba(255,255,255,0.04);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 14px 16px;
+  border-radius: 10px;
+  padding: 10px 13px;
 }
 
 .info-item .info-label {
