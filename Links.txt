@@ -1,0 +1,2 @@
+Projeto em funcionamento - https://projeto-web-entrega.vercel.app/login
+Projeto no GitHub - https://github.com/petrykpm/Projeto-web-entrega
